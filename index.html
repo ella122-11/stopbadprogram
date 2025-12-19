@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <title>S.T.O.P B.A.D Project</title>
+
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      background: url("bg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+    }
+
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffffd9;
+      padding: 15px 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-circle {
+      width: 40px;
+      height: 40px;
+      background: url("logo.png") center/cover no-repeat;
+      border-radius: 50%;
+    }
+
+    .logo h1 {
+      font-size: 1.4rem;
+      margin: 0;
+      color: #023e8a;
+    }
+
+    .logo p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    nav a {
+      color: #023e8a;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .content-wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+    }
+
+    .main-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .desc-row {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .card {
+      background: #ffffffea;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      backdrop-filter: blur(6px);
+      text-align: left;
+      border-left: 6px solid #0077b6;
+      transition: 0.25s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.15);
+    }
+
+    .desc1, .desc2 {
+      width: 320px;
+    }
+
+    .desc1 h2, .desc2 h2 {
+      font-size: 1.7rem;
+      color: #023e8a;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .desc1 p, .desc2 p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #333;
+      margin: 0;
+    }
+
+    .desc3 {
+      width: 900px;
+      margin: 0 auto;
+    }
+
+    .desc4, .desc5 {
+      width: 500px;
+      margin: 0 auto;
+    }
+
+    .desc3 h2, .desc4 h2, .desc5 h2 {
+      font-size: 2.2rem;
+      color: #023e8a;
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .desc3 ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .desc3 .term {
+      display: block;
+      font-size: 1.5rem;
+      color: #0077b6;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      border-bottom: 2px solid #90e0ef;
+      padding-bottom: 6px;
+    }
+
+    .desc3 ul {
+      list-style: disc;
+      padding-left: 25px;
+      margin-bottom: 30px;
+    }
+
+    .desc3 li {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .desc3 li b {
+      color: #023e8a;
+    }
+
+    .desc3 li:hover {
+      background: #e9f5ff;
+      border-radius: 6px;
+      padding: 4px 6px;
+      transition: 0.2s ease;
+    }
+
+    .toc {
+      width: 250px;
+      background: #FFFFFF;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 40px;
+      height: fit-content;
+    }
+
+    .toc h3 {
+      margin: 0 0 15px;
+      color: #023e8a;
+      font-size: 1.3rem;
+    }
+
+    .toc a {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #ffffffd9;
+      color: #666;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .desc4, .desc5 {
+      width: 850px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 45px 55px;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+      backdrop-filter: blur(6px);
+      border-left: 7px solid #0077b6;
+      transition: 0.25s ease;
+    }
+
+    .desc4:hover, .desc5:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.16);
+    }
+
+    .desc4 h2, .desc5 h2 {
+      font-size: 2.2rem;
+      color: #023e8a;
+      margin-bottom: 25px;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .desc4 p, .desc5 p {
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: #333;
+      margin: 12px 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #f7fbff;
+      border: 1px solid #e1effa;
+    }
+
+    .desc4 p:hover, .desc5 p:hover {
+      background: #eaf5ff;
+      transition: 0.2s ease;
+    }
+
+    .acro {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0077b6;
+      margin-right: 4px;
+    }
+
+    .desc4 p b, .desc5 p b {
+      color: #023e8a;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <div class="logo-circle"></div>
+      <div>
+        <h1>S.T.O.P B.A.D PROGRAM</h1>
+        <p>Stand Together, Overcome the Pain against Bullying and Discrimination</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="creative_corner.html">Creative Corner</a>
+      <a href="hotline.html">Hotline</a>
+    </nav>
+  </header>
+
+  <div class="content-wrapper">
+
+    <div class="main-content">
+
+      <div class="desc-row">
+        <section class="desc1 card" id="definition">
+          <h2>What is bullying?</h2>
+          <p>Bullying is any unwanted or aggressive behavior from someone who is intentionally trying to upset, harm, or have power over you.</p>
+        </section>
+
+        <section class="desc2 card">
+          <h2>What is discrimination?</h2>
+          <p>STEMVERSE Hub is an interactive educational game platform designed to make learning science and mathematics a thrilling and fun experience.</p>
+        </section>
+      </div>
+
+      <section class="desc3 card" id="types">
+        <h2>Types of Bullying</h2>
+        <ul>
+          <ol>
+            <b class="term">Verbal Bullying</b>Verbal bullying is the most common form of bullying. Examples of verbal bullying includes:<br><br>
+            <ul>
+              <li><b>Name-calling:</b> Insulting someone by saying mean words like "stupid" or "loser" to put someone down.</li>
+              <li><b>Humiliation:</b> Pointing out someone's mistakes in front of others to make them feel bad.</li>
+              <li><b>Taunting:</b> Making fun of someone's ideas over and over, like calling them "brilliant," but in a mocking way.</li>
+              <li><b>Teasing:</b> Joking about how someone looks or dresses in a hurtful way.</li>
+              <li><b>Threatening to cause harm:</b> For example, saying "Give me your lunch money or I'll hurt you."</li>
+              <li><b>Making inappropriate comments:</b> Saying rude or sexual things about someone's body.</li>
+            </ul>
+          </ol>
+
+          <br>
+
+          <ol>
+            <b class="term">Social Bullying</b>Social bullying is also called relational bullying, relational aggression, or emotional bullying happens when someone tries to hurt another person’s friendships or reputation.Examples of social bullying includes:<br><br>
+            <ul>
+              <li><b>Exclusion:</b> Purposely not including someone in group activities so they feel left out.</li>
+              <li><b>Damaging reputation:</b> Making up lies about a co-worker to make others doubt their character or skills.</li>
+              <li><b>Shunning:</b> Encouraging people to avoid, ignore, or stop being friends with someone.</li>
+              <li><b>Public humiliation:</b> Mocking a student in front of classmates when they make a mistake to embarrass them.</li>
+            </ul>
+          </ol>
+
+          <br>
+
+          <ol>
+            <b class="term">Physical Bullying</b>Physical bullying includes bodily harm or damage to possessions. Any form of unprovoked physical contact constitutes physical bullying. Examples of physical bullying includes:<br><br>
+            <ul>
+              <li><b>Damaging personal belongings:</b> Breaking or throwing away someone's things, like their books or gadgets.</li>
+              <li><b>Physical attacks:</b> Hurting someone by hitting, kicking, tripping, pushing, or spitting on them.</li>
+              <li><b>Blocking pathways:</b> Stopping someone from moving through a space to make them feel stuck.</li>
+              <li><b>Gestures:</b> Using rude or mocking facial expressions or hand signs to put someone down.</li>
+              <li><b>Grabbing or restraining:</b> Forcing someone to stay in place by holding them against their will.</li>
+            </ul>
+          </ol>
+
+          <br>
+
+          <ol>
+            <b class="term">Cyberbullying</b>Cyberbullying involves or harassing someone online or through social media. This harassment can occur on a computer, telephone, cell, or text messaging device. Examples of cyberbullying can include:<br><br>
+            <ul>
+              <li><b>Doxxing:</b> Sharing someone's private details, like their phone number to address, to scare or harm them.</li>
+              <li><b>Impersonation:</b> Creating fake accounts of a person and posting embarrassing or private content about them.</li>
+              <li><b>Outing:</b> Exposing personal information, such as someone's sexual orientation, without their permission.</li>
+              <li><b>Public insults:</b> Writing mean or disrespectful comments about someone on social media.</li>
+              <li><b>Flaming:</b> Posting offensive or aggressive remarks online to turn others against someone.</li>
+              <li><b>Trolling</b> Purposely upsetting or provoking people on social media just for fun.</li>
+            </ul>
+          </ol>
+        </ul>
+      </section>
+
+
+      <section class="desc4 card" id="signs">
+        <h2>Signs of Bullying</h2>
+        <br>
+        <p><b class="acro">S</b><b>adness:</b> The person often looks unhappy, withdrawn, or upset.</p>
+        <p><b class="acro">T</b><b>rouble at school or work:</b> Falling grades, skipping classes, or avoiding work.</p>
+        <p><b class="acro">O</b><b>verstimulation:</b> Sudden anger, crying, mood swings, or feeling overwhelmed or stress.</p>
+        <p><b class="acro">P</b><b>hysical marks:</b> Unexplained bruises, scratches, or damaged belongings.</p>
+        <br>
+        <p><b class="acro">B</b><b>eing isolated:</b> Avoiding friends, staying alone, or being excluded.</p>
+        <p><b class="acro">A</b><b>nxiety:</b> Nervousness, fear of certain places or people.</p>
+        <p><b class="acro">D</b><b>erogatory of Self:</b> Speak negatively about themselves, low self-esteem, or self-blame.
+    </section>
+
+    <section class="desc5 card" id="action">
+      <h2>Action Step for Bullying</h2>
+      <br>
+      <p><b class="acro">S</b><b>eek Support:</b> Find a safe adult, a teacher, or a counselor immediately.</p>
+      <p><b class="acro">T</b><b>ell the truth</b> Report the specific details of the incident via Guidance Office or anonymous website.</p>
+      <p><b class="acro">O</b><b>bserve and Own:</b> Note the facts, the who, what, and where, take ownership of the decision to stand-up/report.</p>
+      <p><b class="acro">P</b><b>rotect Yourself/Others:</b> Move away from the situation and use safe coping skills..</p>
+      <br>
+      <p><b class="acro">B</b><b>e an Upstander:</b> Intervene safety by distracting, calling for help, or supporting the victim.</p>
+      <p><b class="acro">A</b><b>ccess Resources:</b> Use the S.T.O.P. B.A.D. website and hotline numbers for help.</p>
+      <p><b class="acro">D</b><b>o Not Engage:</b> Do not retaliate, argue, or share rumors/online posts about the incident.
+    </section>
+        </div>
+
+    <aside class="toc">
+      <h3>Table of Contents</h3>
+      <a href="#definition">Definition</a>
+      <a href="#types">Types</a>
+      <a href="#signs">Signs</a>
+      <a href="#action">Actions</a>
+    </aside>
+
+  </div>
+
+  <footer>
+    <p>© 2025 S.T.O.P B.A.D Program. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
